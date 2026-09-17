@@ -1,3 +1,12 @@
+## 2.6.0
+
+- Update for **Flutter 3.47** (requires Flutter 3.44+ / Dart 3.12+)
+- **(Android)** Migrate to Built-in Kotlin: drop the `kotlin-android` plugin and `kotlinOptions`, use `kotlin.compilerOptions`
+- **(Android)** Update to AGP 9.1.0 / KGP 2.4.0, `compileSdk` 36, `minSdk` 24 and Java 17
+- **(Android)** Remove the `package` attribute from `AndroidManifest.xml` in favor of `namespace`
+- **(iOS)** Add Swift Package Manager support. Sources moved to `ios/soundpool/Sources/soundpool` and the Objective-C bridge was removed (the Swift class is now `SoundpoolPlugin`)
+- **(iOS)** Raise minimum deployment target to iOS 13.0
+
 ## 2.5.0
 
 - Deleted `registerWith` deprecated method

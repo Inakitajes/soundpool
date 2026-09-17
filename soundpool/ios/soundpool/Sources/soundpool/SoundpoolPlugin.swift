@@ -3,16 +3,16 @@ import UIKit
 import AVFoundation
 
 
-public class SwiftSoundpoolPlugin: NSObject, FlutterPlugin {
+public class SoundpoolPlugin: NSObject, FlutterPlugin {
     public static func register(with registrar: FlutterPluginRegistrar) {
         let channel = FlutterMethodChannel(name: "pl.ukaszapps/soundpool", binaryMessenger: registrar.messenger())
-        let instance = SwiftSoundpoolPlugin()
+        let instance = SoundpoolPlugin()
         registrar.addMethodCallDelegate(instance, channel: channel)
     }
     
     private let counter = Atomic<Int>(0)
     
-    private lazy var wrappers = Dictionary<Int,SwiftSoundpoolPlugin.SoundpoolWrapper>()
+    private lazy var wrappers = Dictionary<Int,SoundpoolPlugin.SoundpoolWrapper>()
     
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         switch call.method {
@@ -115,7 +115,7 @@ public class SwiftSoundpoolPlugin: NSObject, FlutterPlugin {
         }
     }
     
-    private func wrapperById(id: Int) -> SwiftSoundpoolPlugin.SoundpoolWrapper? {
+    private func wrapperById(id: Int) -> SoundpoolPlugin.SoundpoolWrapper? {
         if (id < 0){
             return nil
         }
